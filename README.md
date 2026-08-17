@@ -1,64 +1,27 @@
-# miRNA Ovarian Cancer RCC Files
+# Ovarian cancer integrated miRNA-mRNA analysis code
 
-## Overview
-This repository contains renamed RCC files and related materials for the miRNA ovarian cancer project.
+This repository contains analysis scripts and reproducibility materials for the manuscript:
 
-These files are intended to support organized downstream analysis, reproducibility, and manuscript-associated record keeping for ovarian cancer miRNA expression studies.
+Integrated miRNA-mRNA network analysis identifies a miR-15a-5p-centered angiogenic program and biomarker-linked regulatory modules in ovarian cancer.
 
 ## Contents
-This repository may include:
-- renamed RCC files
-- sample annotation or metadata tables
-- analysis scripts
-- processed outputs
-- quality control results
-- figures and supplementary tables
 
-## File Description
-RCC files are raw or near-raw output files generated from NanoString nCounter assays and were renamed here to provide a consistent, analysis-ready naming structure.
+- scripts/00_manuscript_readiness_check.R  
+  Checks the presence of expected manuscript tables, figures, supplementary files, and analysis outputs.
 
-The purpose of renaming was to:
-- standardize sample identifiers
-- improve traceability across analysis steps
-- reduce ambiguity between original instrument-generated names and project sample names
-- simplify downstream scripting and reproducible analysis
+- scripts/06_TCGA_module5_covariate_sensitivity.R  
+  Exploratory TCGA-OV sensitivity analysis for the Module 5 miR-15a-5p angiogenesis association.
 
-## Recommended Metadata
-A metadata table should accompany these files and ideally contain:
-- sample ID
-- original file name
-- renamed file name
-- biological group
-- replicate information
-- batch information
-- any relevant clinical or experimental annotation permitted for sharing
+- scripts/legacy_miRNA_mRNA_integration_review_before_use.R  
+  Earlier miRNA-mRNA integration script retained for provenance review. This file should not be treated as the final revised network-construction script unless reconciled with the final exported network table.
 
-## Intended Use
-These files are intended for:
-- miRNA expression preprocessing
-- quality control
-- normalization
-- downstream differential expression analysis
-- integration with manuscript figures and tables
+- sessionInfo.txt  
+  R session information from the revision environment.
 
-## Reproducibility Notes
-To preserve reproducibility:
-- keep original RCC files unchanged
-- document renaming logic clearly
-- maintain a mapping table between original and renamed file names
-- version-control scripts and metadata used for analysis
-- avoid manual undocumented edits to data files
+## Important note
 
-## Data Sharing Notes
-This repository may contain project data intended for internal analysis, manuscript preparation, or controlled sharing.
+The final manuscript network is described as an expression-inferred network. The final exported edge table contains 4,614 inferred miRNA-mRNA edges linking 24 miRNAs and 1,236 mRNAs. All retained final edges are annotated as novel_inferred, and the final edge score is defined in the revised Methods.
 
-Before making the repository public, confirm that:
-- no restricted or identifiable information is included
-- metadata are appropriate for release
-- any associated manuscript or institutional policies are followed
+## Data availability
 
-## Contact
-Cleofes Sarmiento  
-Senior Bioinformatics Research Associate  
-Boys Town National Research Hospital
-
+Raw sequencing and expression data are deposited separately. Large raw files such as FASTQ, RCC, BAM, and full expression matrices are not included in this code repository.
